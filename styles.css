@@ -27,7 +27,7 @@ body {
     font-size: 50px;
     margin-top: 50px;
     margin-bottom: 15px; 
-    padding-left: 200px;
+
 }
 
 .email {
@@ -48,14 +48,17 @@ ul {
  }
 
  .sidebar {
-    width: 200px;
+    width: 150px;
     background-color: #494D5F;
-    color: #d0bdf4;
+    color: #494D5F;
     box-sizing: border-box;
     padding: 16px;
     flex-shrink: 0;
     margin: 0;
+   
   }
+
+
 
   .main {
     display: flex;
@@ -63,21 +66,27 @@ ul {
   }
 
   .content {
-    background-color: #d0bdf4;
-    border-radius: 15px;
+    background-color: #D3D3D3;
     padding: 10px;
     color: #494D5F;
-    margin-right: 0;
+    border-radius: 5px;
+    margin-top: 25px;
+    flex: 1;
+    border: 5px, solid, #a0d2eb;
   }
+
 
   .footer {
     display: flex;
-    background-color: #d0bdf4;
-    color: #8458B3;
-    margin-top: 50px;
-    margin-left: 200px;
-    padding-top: 20px;
+    background-color: #D3D3D3;
+    color: #494D5F;
+    border: 5px, solid, #a0d2eb;
     border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     justify-content: center;
     align-items: flex-end;
+    flex: 1;
   }
