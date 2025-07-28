@@ -1,1 +1,0 @@
-Creating my personal site while I follow along on the Odin Project.
