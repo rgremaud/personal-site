@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block content %}
+{% for project in project_list %}
+<div class="card">
+  <div class="card-header">
+    <span class="fw-bold">
+      <a href="#">{{ project.title }}</a>
+    </span> &middot;
+    <span class="text-muted"> {{ project.date }}</span>
+  </div>
+  <div class="card-body">
+    {{ project.body }}
+  </div>
+  <div class="card-footer text-center text-muted">
+    <a href="#">Edit</a> <a href="#">Delete</a>
+  </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}
