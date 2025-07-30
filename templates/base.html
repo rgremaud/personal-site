@@ -13,19 +13,23 @@
     <!--Navbar testing-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/media/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{% url 'home' %}">Romain Gremaud</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Projects</a>
-                    <a class="nav-link" href="#">About</a>
-                </div>
-                {% if user.is_authenticated %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'project_list' %}">Projects</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'project_new' %}" class="nav-link active">+ New</a></li>
+                </ul>
                 <div class="mr-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -54,15 +58,12 @@
                 <div class="mr-auto">
                     <form class="form d-flex">
                         <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-                        <a href="{% url 'signup' %}" class="btn btn-outline-primary">Sign up</a>
+                        <a href="{% url 'signup' %}" class="btn btn-primary ms-2">Sign up</a>
                     </form>
                 </div>
                 {% endif %}
             </div>
         </div>
-        </div>
-    </nav>
-    </div>
     </nav>
     <!--End navbar testing-->
 

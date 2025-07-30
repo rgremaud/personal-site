@@ -7,7 +7,7 @@
 <div class="card">
   <div class="card-header">
     <span class="fw-bold">
-      <a href="#">{{ project.title }}</a>
+      <a href="{{ project.get_absolute_url }}">{{ project.title }}</a>
     </span> &middot;
     <span class="text-muted"> {{ project.date }}</span>
   </div>
@@ -15,7 +15,8 @@
     {{ project.body }}
   </div>
   <div class="card-footer text-center text-muted">
-    <a href="#">Edit</a> <a href="#">Delete</a>
+    <a href="{% url 'project_edit' project.pk %}">Edit</a>
+    <a href="{% url 'project_delete' project.pk %}">Delete</a>
   </div>
 </div>
 <br />
