@@ -19,6 +19,19 @@
     <a href="{% url 'project_edit' project.pk %}">Edit</a>
     <a href="{% url 'project_delete' project.pk %}">Delete</a>
     {% endif %}
+    {% if user.is_authenticated %}
+    <a href="{{ project.get_absolute_url }}">New Comment</a>
+    {% endif %}
+  </div>
+  <div class="card-footer">
+    {% for comment in project.comment_set.all %}
+    <p>
+      <span class="fw-bold">
+        {{ comment.author }} &middot;
+      </span>
+      {{ comment }}
+    </p>
+    {% endfor %}
   </div>
 </div>
 <br />
