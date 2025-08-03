@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin
 from .models import Project
 
 
@@ -14,7 +15,10 @@ class ProjectDetailView(DetailView):
     template_name = "project_detail.html"
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(UserPassesTestMixin, UpdateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+    
     model = Project
     fields = (
         "title",
@@ -23,13 +27,19 @@ class ProjectUpdateView(UpdateView):
     template_name = "project_edit.html"
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(UserPassesTestMixin, DeleteView):
+    def test_func(self):
+        return self.request.user.is_superuser
+    
     model = Project
     template_name = "project_delete.html"
     success_url = reverse_lazy("project_list")
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(UserPassesTestMixin, CreateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
     model = Project
     template_name = "project_new.html"
     fields = (

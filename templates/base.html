@@ -27,10 +27,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'project_list' %}">Projects</a>
                     </li>
-                    {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
                     <li><a href="{% url 'project_new' %}" class="nav-link active">+ New</a></li>
+                    {% endif %}
                 </ul>
                 <div class="mr-auto">
+                    {% if user.is_authenticated %}
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
