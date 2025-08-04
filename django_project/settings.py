@@ -32,7 +32,7 @@ DEBUG = env.bool("DEBUG", default=False)
 
 
 ALLOWED_HOSTS = [
-    "https://warm-plains-06747-9374d1b63de8.herokuapp.com/",
+    "warm-plains-06747-9374d1b63de8.herokuapp.com/",
     "localhost",
     "127.0.0.1",
 ]
