@@ -32,7 +32,7 @@ DEBUG = env.bool("DEBUG", default=False)
 
 
 ALLOWED_HOSTS = [
-    "warm-plains-06747-9374d1b63de8.herokuapp.com/",
+    "warm-plains-06747-9374d1b63de8.herokuapp.com",
     "localhost",
     "127.0.0.1",
 ]
@@ -158,4 +158,4 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-CSRF_TRUSTED_ORIGINS = ["https://warm-plains-06747-9374d1b63de8.herokuapp.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://warm-plains-06747-9374d1b63de8.herokuapp.com"]
