@@ -3,6 +3,13 @@
 {% block title %}Home{% endblock title%}
 
 {% block content %}
+<div class="p-3 mb-4 mt-4 border rounded-3">
+    <div class="container-fluid py-4">
+        <h1 class="display-3">Welcome to my site.</h1>
+        <p class="lead">The purpose of this website is to document my projects and grow my web development skills. Feel
+            free to leave a comment and thank you for visiting!</p>
+    </div>
+</div>
 {% if user.is_authenticated %}
 <p>Hi {{ user.username }}</p>
 <form action="{% url 'logout' %}" method="post">

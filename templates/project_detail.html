@@ -15,11 +15,13 @@
 {% endfor %}
 <hr>
 
+{% if user.is_authenticated %}
 <h4>Add a comment</h4>
 <form action="" method="post">{% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-outline-success ms-2" type="submit">Save</button>
 </form>
+{% endif %}
 
 {% if user.is_superuser %}
 <p><a href="{% url 'project_edit' project.pk %}">Edit</a>
