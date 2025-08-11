@@ -1,0 +1,40 @@
+/* custom.css: Add your custom Bootstrap color overrides here */
+
+:root {
+    --bs-primary: #4B0082;
+    /* Example: Indigo */
+    --bs-secondary: #FF8C00;
+    /* Example: Dark Orange */
+    --bs-success: #3e228b;
+    /* Example: Forest Green */
+    --bs-info: #20B2AA;
+    /* Example: Light Sea Green */
+    --bs-warning: #FFD700;
+    /* Example: Gold */
+    --bs-danger: #DC143C;
+    /* Example: Crimson */
+    --bs-light: #F8F9FA;
+    --bs-dark: #343A40;
+}
+
+/* Optionally override Bootstrap classes directly */
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-secondary {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+}
+
+body {
+    background-color: #3E446E;
+    /* Replace with your desired color */
+    color: #59AC99;
+}
+
+.navbar {
+    background-color: #4B0082 !important;
+    /* Example: Indigo */
+}
